@@ -2,7 +2,7 @@
 
 - RESTfulなAPIでは**JWT認証を採用する**のが適しているとされている
 
-<div style="overflow-x: auto;">
+<div style="overflow-x:auto;">
 
 | 認証方式 | トークンの形式 | 概要 | メリット | デメリット | 備考 |
 | --- | --- | --- | --- | --- | --- |
@@ -13,22 +13,9 @@
 
 </div>
 
-※上記内容は[1]より引用
-
-- 認証用トークンの格納先はCookie/localStorage/sessionStorageのどれを使うべきか
-
-→ 下記いずれかが望ましい
-
-    - httpOnly属性を付与してSet-Cookieヘッダで受け取ったトークンをCookieに保存してCSRF対策を行う
-    - 有効期限のあるトークンをlocalStorageに保存してXSS脆弱性に気を付ける
-
-(sessionStorageだとタブごとの保存領域であるためタブを複製した場合にログインが切れてしまい不便)
-
-※上記内容は[1]より引用
-
 ## エンドポイント一覧
 
-<div style="overflow-x: auto;">
+<div style="overflow-x:auto;">
 
 | 用途 | HTTPメソッド | エンドポイント | コマンド例 |
 | --- | --- | --- | --- |
@@ -51,7 +38,6 @@
     - このため、カスタム User モデルを使って登録したユーザー情報を登録する一方で、Django標準の User モデルにユーザーが登録されていない実装に齟齬がある状態。
     - もし、カスタム User モデルを使用する場合は、Djangoの認証システムと互換性のある形で実装する必要がある。これは AbstractBaseUser や PermissionsMixin を使ってカスタムユーザーモデルを構築する必要がある。
 - postmanを使ったテスト←やるべきか相談
-
 
 ## 参考記事
 
